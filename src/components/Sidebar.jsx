@@ -11,11 +11,17 @@ const Sidebar = () => {
 
           <span className="ms-3 text-white">Filters</span>
 
+
       <ul className="space-y-2 font-medium">
         <li>
+          <div className="ms-3 text-white">Sort By </div>
+          <div className="ms-3 text-white">Price</div>
+          <div className="ms-3 text-white">Star Rating</div>
+          <div className="ms-3 text-white">In Stock only</div>
          
         </li>
       </ul>
+          <div className="ms-3 text-white">Clear All Btn</div>
     </div>
   </aside>
   )

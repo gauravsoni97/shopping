@@ -26,10 +26,9 @@ const Home = () => {
       <div className="p-4 sm:ml-64">
         <div className="p-4 mt-14">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-4">
-            {productDataList.map((ele, id)=>
-            
-            <ProductCard ele={ele}  key={id}/>
-            )}
+            {productDataList.map((ele, id) => (
+              <ProductCard ele={ele} key={id} />
+            ))}
           </div>
         </div>
       </div>
