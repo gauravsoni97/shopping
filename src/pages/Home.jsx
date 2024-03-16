@@ -24,7 +24,7 @@ const Home = () => {
       <Sidebar />
 
       <div className="p-4 sm:ml-64">
-        <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+        <div className="p-4 mt-14">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-4">
             {productDataList.map((ele, id)=>
             
