@@ -4,11 +4,11 @@ import { useProductsContext } from "../context/ProductListContext";
 
 const ProductDetailsPage = () => {
   const { products } = useProductsContext();
-  let { id: productId } = useParams();
+  let { id } = useParams();
 
-  const res = products.find((ele) => ele.id === productId);
+  const res = products.find((ele) => ele.id === id);
 
-  console.log("response", products.find((ele) => ele.id));
+  console.log("response", res);
 
   return <div>ProductDetailsPage</div>;
 };
