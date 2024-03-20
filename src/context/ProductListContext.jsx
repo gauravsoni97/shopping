@@ -8,7 +8,7 @@ const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   const fetchProducts = async () => {
     try {
       const response = await fetch("https://dummyjson.com/products?limit=100");
@@ -20,7 +20,7 @@ const ProductsProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchProducts();
   }, []);
