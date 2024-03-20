@@ -6,6 +6,7 @@ export const ProductsListCtx = createContext();
 // Custom context provider component
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  console.log("products ==>", products);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
