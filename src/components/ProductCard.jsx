@@ -20,7 +20,7 @@ const ProductCard = ({ ele, id }) => {
         </p>
 
         <div className="flex items-center	justify-between">
-          <span class="text-xl font-bold text-gray-900 dark:text-white">
+          <span className="text-xl font-bold text-gray-900 dark:text-white">
             ${ele.price}
           </span>
 
