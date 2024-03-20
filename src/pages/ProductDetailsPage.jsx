@@ -7,121 +7,65 @@ const ProductDetailsPage = () => {
 
   const { id } = useParams();
 
-  console.log("res", id);
   const [selectedProduct, setSetSelectedProduct] = useState([]);
   console.log("selectedProducts", selectedProduct);
 
   useEffect(() => {
-    console.log("products", products, id);
     const res = products.find((ele) => ele.id - 1 === parseInt(id));
-
     setSetSelectedProduct(res);
   }, [products]);
 
   return (
-    <div>
-      <div className="grid gap-4">
-        <div>
-          <div id="gallery" className="relative w-full" data-carousel="slide">
-            {/* <!-- Carousel wrapper --> */}
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-              {/* <!-- Item 1 --> */}
-              <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                  className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt=""
-                />
-              </div>
-              {/* <!-- Item 2 --> */}
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item="active"
-              >
-                <img
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                  className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt=""
-                />
-              </div>
-              {/* <!-- Item 3 --> */}
-              <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                  className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt=""
-                />
-              </div>
-              {/* <!-- Item 4 --> */}
-              <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                  className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt=""
-                />
-              </div>
-              {/* <!-- Item 5 --> */}
-              <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                  className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt=""
-                />
-              </div>
+    <>
+      <div className="mt-24 px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+            <div className="max-w-xl mb-6">
+              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl sm:leading-none">
+                Let us handle
+                <br className="hidden md:block" />
+                your next{" "}
+                <span className="inline-block text-deep-purple-accent-400">
+                  destination
+                </span>
+              </h2>
+              <p className="text-base text-gray-400 md:text-lg">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae. explicabo.
+              </p>
             </div>
-            {/* <!-- Slider controls --> */}
             <button
               type="button"
-              className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
+              class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 1 1 5l4 4"
-                  />
-                </svg>
-                <span className="sr-only">Previous</span>
-              </span>
+              Add to Cart
             </button>
-            <button
-              type="button"
-              className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <span className="sr-only">Next</span>
-              </span>
-            </button>
+          </div>
+          <div className="flex items-center justify-center -mx-4 lg:pl-8">
+            <div className="flex flex-col items-end px-3">
+              <img
+                className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <img
+                className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+            </div>
+            <div className="px-3">
+              <img
+                className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+                src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
