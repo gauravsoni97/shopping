@@ -1,6 +1,7 @@
 import React from "react";
 import RangeSlider from "./AllFilters/RangeSlider";
 import StarRating from "./AllFilters/StarRating";
+import HighLow from "./AllFilters/HighLow";
 
 const Sidebar = () => {
   return (
@@ -14,38 +15,8 @@ const Sidebar = () => {
           <li>
             <div className="ms-3 text-white mb-3">
               <p className="text-white my-3">Sort By</p>
-
-              <div className="flex items-center mb-4">
-                <input
-                  id="default-radio-1"
-                  type="radio"
-                  value=""
-                  name="default-radio"
-                  className="text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="default-radio-1"
-                  className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  High to Low
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  checked
-                  id="default-radio-2"
-                  type="radio"
-                  value=""
-                  name="default-radio"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="default-radio-2"
-                  className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Low to High{" "}
-                </label>
-              </div>
+              <HighLow/>
+            
             </div>
             <div className="ms-3 text-white">
               <p className="text-white">Price</p>
