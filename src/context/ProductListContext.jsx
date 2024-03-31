@@ -6,22 +6,24 @@ export const ProductsListCtx = createContext();
 // Custom context provider component
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  console.log("products ==>", products);
+  const [filteredproducts, setFilteredProducts] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const fetchProducts = async () => {
     try {
       const response = await fetch("https://dummyjson.com/products?limit=100");
       const data = await response.json();
       setProducts(data.products);
+      setFilteredProducts(data.products)
       setLoading(false);
     } catch (error) {
       setError(error);
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -30,9 +32,10 @@ const ProductsProvider = ({ children }) => {
     products,
     loading,
     error,
+    filteredproducts,
+    setFilteredProducts
   };
 
-  // Return the context provider with the value prop
   return (
     <ProductsListCtx.Provider value={ctxValue}>
       {children}

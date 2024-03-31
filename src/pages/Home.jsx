@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import { useProductsContext } from "../context/ProductListContext";
 
 const Home = () => {
-  const { products } = useProductsContext();
+  const { products, filteredproducts } = useProductsContext();
 
   return (
     <>
@@ -14,7 +14,7 @@ const Home = () => {
       <div className="p-4 sm:ml-64">
         <div className="p-4 mt-14">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-4">
-            {products.map((ele, id) => (
+            {filteredproducts.map((ele, id) => (
               <ProductCard ele={ele} key={id} id={id} />
             ))}
           </div>
