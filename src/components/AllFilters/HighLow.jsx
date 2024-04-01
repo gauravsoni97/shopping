@@ -2,15 +2,18 @@ import React from "react";
 import { useProductsContext } from "../../context/ProductListContext";
 
 const HighLow = () => {
-  const { products, setFilteredProducts } = useProductsContext();
+  const { products, setProducts } = useProductsContext();
 
   const handleHighToLow = () => {
-    setFilteredProducts(products.sort((a, b) => b.price - a.price));
+    // Deep copy - for creating new reference of main array
+
+    let newArr = products.sort((a, b) => b.price - a.price);
+    setProducts(JSON.parse(JSON.stringify(newArr)));
   };
   const handleLowToHigh = () => {
-    setFilteredProducts(products.sort((a, b) => a.price - b.price));
+    let newArr = products.sort((a, b) => a.price - b.price);
+    setProducts(JSON.parse(JSON.stringify(newArr)));
   };
-
 
   return (
     <>

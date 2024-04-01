@@ -6,7 +6,6 @@ export const ProductsListCtx = createContext();
 // Custom context provider component
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [filteredproducts, setFilteredProducts] = useState([]);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +15,6 @@ const ProductsProvider = ({ children }) => {
       const response = await fetch("https://dummyjson.com/products?limit=100");
       const data = await response.json();
       setProducts(data.products);
-      setFilteredProducts(data.products)
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -30,10 +28,9 @@ const ProductsProvider = ({ children }) => {
 
   const ctxValue = {
     products,
+    setProducts,
     loading,
     error,
-    filteredproducts,
-    setFilteredProducts
   };
 
   return (
